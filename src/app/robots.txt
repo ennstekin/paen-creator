@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://creator.paen.com.tr/sitemap.xml
