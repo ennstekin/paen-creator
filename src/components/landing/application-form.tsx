@@ -212,7 +212,7 @@ export function ApplicationForm() {
                 {...register("agreement")}
               />
               <span className="text-xs sm:text-sm text-neutral-500 leading-relaxed">
-                PAEN ile içerik iş birliği koşullarını okudum ve kabul ediyorum. Gönderilen ürünlerin karşılığında içerik üretmeyi taahhüt ediyorum.
+                PAEN ile içerik iş birliği koşullarını okudum ve kabul ediyorum.
               </span>
             </label>
             {errors.agreement && (
