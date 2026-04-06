@@ -15,6 +15,8 @@ import {
 } from "@/components/ui/select";
 import { CheckCircle } from "lucide-react";
 
+declare const gtag: (...args: unknown[]) => void;
+
 const schema = z.object({
   fullName: z.string().min(1, "Ad soyad zorunludur"),
   email: z.string().min(1, "E-posta zorunludur").email("Geçerli e-posta girin"),
@@ -31,6 +33,12 @@ const schema = z.object({
 });
 
 type FormData = z.infer<typeof schema>;
+
+function trackEvent(name: string, params?: Record<string, string>) {
+  if (typeof gtag !== "undefined") {
+    gtag("event", name, params);
+  }
+}
 
 export function ApplicationForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -68,13 +76,16 @@ export function ApplicationForm() {
       if (!res.ok) {
         const json = await res.json();
         setError(json.error || "Bir hata oluştu, tekrar dene.");
+        trackEvent("form_submit_error", { reason: json.error || "unknown" });
         setSubmitting(false);
         return;
       }
 
       setSubmitted(true);
+      trackEvent("form_submit_success", { follower_count: data.followerCount });
     } catch {
       setError("Bağlantı hatası, tekrar dene.");
+      trackEvent("form_submit_error", { reason: "connection_error" });
       setSubmitting(false);
     }
   }
@@ -187,7 +198,10 @@ export function ApplicationForm() {
 
           <div className="space-y-1.5">
             <Label className="text-sm">Takipçi Sayısı</Label>
-            <Select onValueChange={(val) => setValue("followerCount", val)}>
+            <Select onValueChange={(val) => {
+              setValue("followerCount", val);
+              trackEvent("follower_range_selected", { range: val });
+            }}>
               <SelectTrigger>
                 <SelectValue placeholder="Seçiniz" />
               </SelectTrigger>
