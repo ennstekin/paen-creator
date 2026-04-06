@@ -6,12 +6,12 @@ export function HeroSection() {
       <div className="relative max-w-5xl mx-auto px-5 sm:px-6 pt-14 sm:pt-20 pb-16 sm:pb-24 text-center">
         {/* Heading */}
         <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-neutral-900 leading-[1.15]">
-          Kombine, Üret, Paylaş.
+          Kombinle, Üret, Paylaş.
         </h1>
 
         {/* Subheading */}
-        <p className="mt-4 sm:mt-6 text-base sm:text-xl text-neutral-500 max-w-xl mx-auto leading-relaxed px-2">
-          PAEN ürünlerini kombinle, içerik üreticimiz ol!
+        <p className="mt-4 sm:mt-6 text-base sm:text-xl text-neutral-900 max-w-xl mx-auto leading-relaxed px-2">
+          PAEN ürünlerini kombinle,<br />içerik üreticimiz ol!
         </p>
 
         {/* CTA */}
