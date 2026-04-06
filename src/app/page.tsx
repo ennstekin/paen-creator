@@ -6,9 +6,9 @@ import { Footer } from "@/components/landing/footer";
 import { VideoShowcase } from "@/components/landing/video-showcase";
 
 export const metadata: Metadata = {
-  title: "PAEN - Influencer İşbirliği Programı",
+  title: "PAEN - Influencer İş Birliği Programı",
   description:
-    "PAEN ile işbirliği yap, modayı birlikte şekillendir. Influencer başvuru programımıza katıl.",
+    "PAEN ile iş birliği yap, modayı birlikte şekillendir. Influencer başvuru programımıza katıl.",
 };
 
 export default function Home() {
