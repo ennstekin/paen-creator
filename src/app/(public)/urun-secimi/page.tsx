@@ -147,7 +147,7 @@ export default function UrunSecimiPage() {
             <button
               onClick={() => setStep(2)}
               disabled={!selectedColor || !selectedSize}
-              className="w-full h-13 rounded-full bg-neutral-900 text-sm font-semibold text-white hover:bg-neutral-800 transition-colors active:scale-[0.98] disabled:opacity-30 disabled:cursor-not-allowed"
+              className="w-full h-14 rounded-full bg-neutral-900 text-base font-semibold text-white hover:bg-neutral-800 transition-colors active:scale-[0.98] disabled:opacity-30 disabled:cursor-not-allowed"
             >
               Devam et
             </button>
@@ -264,7 +264,7 @@ export default function UrunSecimiPage() {
               <button
                 onClick={handleSubmit}
                 disabled={submitting}
-                className="w-full h-13 rounded-full bg-neutral-900 text-sm font-semibold text-white hover:bg-neutral-800 transition-colors active:scale-[0.98] disabled:opacity-50"
+                className="w-full h-14 rounded-full bg-neutral-900 text-base font-semibold text-white hover:bg-neutral-800 transition-colors active:scale-[0.98] disabled:opacity-50"
               >
                 {submitting ? "Gönderiliyor..." : "Gönder"}
               </button>
