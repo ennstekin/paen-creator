@@ -76,7 +76,7 @@ export default function UrunSecimiPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="bg-white">
       <div className="max-w-2xl mx-auto px-4 sm:px-5 py-4 sm:py-16">
 
         {/* Header */}
