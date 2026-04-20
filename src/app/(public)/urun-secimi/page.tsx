@@ -76,8 +76,8 @@ export default function UrunSecimiPage() {
   }
 
   return (
-    <div className="bg-white">
-      <div className="max-w-2xl mx-auto px-4 sm:px-5 py-4 sm:py-16">
+    <div className="min-h-dvh bg-white flex flex-col">
+      <div className="max-w-2xl mx-auto px-4 sm:px-5 pt-4 sm:pt-16 flex-1 flex flex-col w-full">
 
         {/* Header */}
         <div className="mb-4 sm:mb-8">
@@ -86,14 +86,14 @@ export default function UrunSecimiPage() {
 
         {/* Step 1: Tişört Seçimi */}
         {step === 1 && (
-          <>
-            <div className="mb-4 sm:mb-8">
+          <div className="flex-1 flex flex-col">
+            <div className="mb-3 sm:mb-8">
               <p className="text-[10px] sm:text-xs font-medium uppercase tracking-widest text-neutral-400 mb-1">Adım 1</p>
-              <h1 className="text-xl sm:text-3xl font-bold text-neutral-900">Tişörtünü seç</h1>
+              <h1 className="text-lg sm:text-3xl font-bold text-neutral-900">Tişörtünü seç</h1>
             </div>
 
             {/* Color grid */}
-            <div className="grid grid-cols-5 sm:grid-cols-5 gap-2 sm:gap-3 mb-4 sm:mb-8">
+            <div className="grid grid-cols-3 sm:grid-cols-5 gap-2 sm:gap-3 flex-1 content-start">
               {colors.map((color) => (
                 <button
                   key={color.slug}
@@ -104,7 +104,7 @@ export default function UrunSecimiPage() {
                       : "border-transparent hover:border-neutral-200"
                   }`}
                 >
-                  <div className="bg-neutral-50 p-1 sm:p-2">
+                  <div className="bg-neutral-50 p-1.5 sm:p-2">
                     <Image
                       src={color.image}
                       alt={color.name}
@@ -113,45 +113,46 @@ export default function UrunSecimiPage() {
                       className="w-full aspect-square object-contain"
                     />
                   </div>
-                  <p className="text-[10px] sm:text-xs font-medium text-neutral-700 py-1 sm:py-2 text-center truncate px-0.5">{color.name}</p>
+                  <p className="text-[11px] sm:text-xs font-medium text-neutral-700 py-1.5 sm:py-2 text-center truncate px-0.5">{color.name}</p>
                   {selectedColor === color.slug && (
-                    <div className="absolute top-1 right-1 sm:top-2 sm:right-2 h-4 w-4 sm:h-5 sm:w-5 rounded-full bg-neutral-900 flex items-center justify-center">
-                      <CheckCircle className="h-2.5 w-2.5 sm:h-3.5 sm:w-3.5 text-white" />
+                    <div className="absolute top-1.5 right-1.5 sm:top-2 sm:right-2 h-5 w-5 rounded-full bg-neutral-900 flex items-center justify-center">
+                      <CheckCircle className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-white" />
                     </div>
                   )}
                 </button>
               ))}
             </div>
 
-            {/* Size */}
-            <div className="mb-4 sm:mb-8">
-              <p className="text-xs sm:text-sm font-medium text-neutral-700 mb-2 sm:mb-3">Beden</p>
-              <div className="flex gap-2">
-                {sizes.map((size) => (
-                  <button
-                    key={size}
-                    onClick={() => setSelectedSize(size)}
-                    className={`h-9 w-12 sm:h-11 sm:w-14 rounded-lg sm:rounded-xl border text-xs sm:text-sm font-medium transition-all ${
-                      selectedSize === size
-                        ? "bg-neutral-900 text-white border-neutral-900"
-                        : "bg-white text-neutral-600 border-neutral-200 hover:border-neutral-400"
-                    }`}
-                  >
-                    {size}
-                  </button>
-                ))}
+            {/* Size + Button pinned to bottom */}
+            <div className="pt-4 pb-4 sm:pb-16 mt-auto">
+              <div className="mb-4">
+                <p className="text-xs sm:text-sm font-medium text-neutral-700 mb-2">Beden</p>
+                <div className="flex gap-2">
+                  {sizes.map((size) => (
+                    <button
+                      key={size}
+                      onClick={() => setSelectedSize(size)}
+                      className={`h-10 w-14 sm:h-11 sm:w-14 rounded-xl border text-sm font-medium transition-all ${
+                        selectedSize === size
+                          ? "bg-neutral-900 text-white border-neutral-900"
+                          : "bg-white text-neutral-600 border-neutral-200 hover:border-neutral-400"
+                      }`}
+                    >
+                      {size}
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
 
-            {/* Next */}
-            <button
-              onClick={() => setStep(2)}
-              disabled={!selectedColor || !selectedSize}
-              className="w-full h-12 sm:h-14 rounded-full bg-neutral-900 text-sm sm:text-base font-semibold text-white hover:bg-neutral-800 transition-colors active:scale-[0.98] disabled:opacity-30 disabled:cursor-not-allowed"
-            >
-              Devam et
-            </button>
-          </>
+              <button
+                onClick={() => setStep(2)}
+                disabled={!selectedColor || !selectedSize}
+                className="w-full h-12 sm:h-14 rounded-full bg-neutral-900 text-sm sm:text-base font-semibold text-white hover:bg-neutral-800 transition-colors active:scale-[0.98] disabled:opacity-30 disabled:cursor-not-allowed"
+              >
+                Devam et
+              </button>
+            </div>
+          </div>
         )}
 
         {/* Step 2: Teslimat Bilgileri */}
