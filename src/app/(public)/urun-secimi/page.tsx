@@ -81,7 +81,7 @@ export default function UrunSecimiPage() {
 
         {/* Header */}
         <div className="mb-8">
-          <p className="text-sm font-bold text-neutral-900 tracking-tight">PAEN</p>
+          <Image src="/logo.png" alt="PAEN" width={60} height={20} className="h-5 w-auto" />
         </div>
 
         {/* Step 1: Tişört Seçimi */}
