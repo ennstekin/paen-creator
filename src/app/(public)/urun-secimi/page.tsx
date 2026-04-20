@@ -195,7 +195,7 @@ export default function UrunSecimiPage() {
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   placeholder="Adın Soyadın"
-                  className="w-full h-11 rounded-xl border border-neutral-200 px-4 text-sm text-neutral-900 placeholder:text-neutral-400 outline-none focus:border-neutral-400 transition-colors"
+                  className="w-full h-11 rounded-xl border border-neutral-200 px-4 text-base text-neutral-900 placeholder:text-neutral-400 outline-none focus:border-neutral-400 transition-colors"
                 />
               </div>
 
@@ -208,7 +208,7 @@ export default function UrunSecimiPage() {
                     type="tel"
                     inputMode="tel"
                     placeholder="05XX XXX XX XX"
-                    className="w-full h-11 rounded-xl border border-neutral-200 px-4 text-sm text-neutral-900 placeholder:text-neutral-400 outline-none focus:border-neutral-400 transition-colors"
+                    className="w-full h-11 rounded-xl border border-neutral-200 px-4 text-base text-neutral-900 placeholder:text-neutral-400 outline-none focus:border-neutral-400 transition-colors"
                   />
                 </div>
                 <div className="space-y-1.5">
@@ -219,7 +219,7 @@ export default function UrunSecimiPage() {
                     type="email"
                     inputMode="email"
                     placeholder="ornek@mail.com"
-                    className="w-full h-11 rounded-xl border border-neutral-200 px-4 text-sm text-neutral-900 placeholder:text-neutral-400 outline-none focus:border-neutral-400 transition-colors"
+                    className="w-full h-11 rounded-xl border border-neutral-200 px-4 text-base text-neutral-900 placeholder:text-neutral-400 outline-none focus:border-neutral-400 transition-colors"
                   />
                 </div>
               </div>
@@ -231,7 +231,7 @@ export default function UrunSecimiPage() {
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
                     placeholder="İstanbul"
-                    className="w-full h-11 rounded-xl border border-neutral-200 px-4 text-sm text-neutral-900 placeholder:text-neutral-400 outline-none focus:border-neutral-400 transition-colors"
+                    className="w-full h-11 rounded-xl border border-neutral-200 px-4 text-base text-neutral-900 placeholder:text-neutral-400 outline-none focus:border-neutral-400 transition-colors"
                   />
                 </div>
                 <div className="space-y-1.5">
@@ -240,7 +240,7 @@ export default function UrunSecimiPage() {
                     value={district}
                     onChange={(e) => setDistrict(e.target.value)}
                     placeholder="Kadıköy"
-                    className="w-full h-11 rounded-xl border border-neutral-200 px-4 text-sm text-neutral-900 placeholder:text-neutral-400 outline-none focus:border-neutral-400 transition-colors"
+                    className="w-full h-11 rounded-xl border border-neutral-200 px-4 text-base text-neutral-900 placeholder:text-neutral-400 outline-none focus:border-neutral-400 transition-colors"
                   />
                 </div>
               </div>
