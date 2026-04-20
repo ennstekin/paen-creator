@@ -22,7 +22,7 @@ const sizes = ["S", "M", "L", "XL"];
 export default function UrunSecimiPage() {
   const [step, setStep] = useState(1);
   const [selectedColor, setSelectedColor] = useState("");
-  const [selectedSize, setSelectedSize] = useState("");
+  const [selectedSize, setSelectedSize] = useState("S");
   const [submitting, setSubmitting] = useState(false);
   const [formError, setFormError] = useState("");
 
@@ -124,9 +124,8 @@ export default function UrunSecimiPage() {
             </div>
 
             {/* Size */}
-            {selectedColor && (
-              <div className="mb-8">
-                <p className="text-sm font-medium text-neutral-700 mb-3">Beden</p>
+            <div className="mb-8">
+              <p className="text-sm font-medium text-neutral-700 mb-3">Beden</p>
                 <div className="flex gap-2">
                   {sizes.map((size) => (
                     <button
@@ -143,7 +142,6 @@ export default function UrunSecimiPage() {
                   ))}
                 </div>
               </div>
-            )}
 
             {/* Next */}
             <button
